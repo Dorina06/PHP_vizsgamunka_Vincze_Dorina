@@ -1,16 +1,16 @@
 <?php
-// Az adatbázis kapcsolat beállításainak betöltése
+
 include 'dbconfig.php';
 
-// Kapcsolat létrehozása az adatbázissal
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Kapcsolat ellenőrzése
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Adatok ellenőrzése és beszúrása az adatbázisba
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Adatainak kinyerése
     $first_name = $conn->real_escape_string($_POST['first_name']);
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $value = isset($_POST['value']) ? (int)$_POST['value'] : null;
     $response = $conn->real_escape_string($_POST['response']);
 
-    // Adatok beszúrása a responses táblába
+    
     $sql = "INSERT INTO responses (first_name, last_name, room_number, email, date, clean, comfort, supply, staff, value, response) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssssiiiiis", $first_name, $last_name, $room_number, $email, $date, $clean, $comfort, $supply, $staff, $value, $response);
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Hiba történt: " . $stmt->error;
     }
 
-    // Lekapcsolódás az adatbázisról
+    
     $stmt->close();
     $conn->close();
 } else {
