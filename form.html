@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vendég elégedettség mérés</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    
+    <div class="container-fluid">
+        <div class="container-fluid, d-flex justify-content-start">
+            <img src="./img/Az Idill logó.png" alt="logo" width="100px">
+        </div>
+        <h1 style="margin-left: 30px;">Ossza meg velünk véleményét!</h1>
+        <p style="margin-left: 30px; margin-top: 30px">HU | Azért dolgozunk nap, mint nap, hogy Önök elégedettek legyenek és jól érezzék magukat nálunk.
+            Éppen ezért fontosnak tartjuk vendégeink véleményét, hiszen a pozitívumok jól esnek a lelkünknek,
+            az építő kritikák pedig segítenek javítani a szolgáltatásainkon.</p>
+        <p style="margin-left: 30px;">EN | We work every day to ensure that you are satisfied and feel good by us.
+            That's why we feel the opinions of our guests are very important, as the positive ones are good for us,
+            and constructive criticism helps us improve our services.</p>
+        <p style="margin-left: 30px;">DE | Wir arbeiten jeden Tag daran, dass Sie zufrieden sind und sich bei uns wolhfühlen.
+            Deshalb sind uns die Meinungen unserer Gäste sehr wichtig, denn die positiven sind gut für uns und konstruktive
+            Kritik hilft uns, unsere Leistungen zu verbessern.</p>
+
+        <form method="post" action="dbfunc.php" style="margin: 30px;">
+            <div style="margin-bottom: 10px;">
+                <label for="last_name">Vezetéknév / Last name / Nachname:</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="first_name">Keresztnév / First name / Vorname:</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="room_number">Szobaszám / Room number / Zimmernummer:</label>
+                <input type="text" id="room_number" name="room_number" required>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="email">Email cím / Email address / Email Adresse:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div style="margin-bottom: 30px;">
+                <label for="date">Dátum / Date / Datum:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <p style="font-weight: bold;">HU | Kérjük, értékelje a nálunk töltött pihenését! (1 = legrosszabb, 5 =
+                nagyon jó)</p>
+            <p style="font-weight: bold;">EN | Rate your vacation by us. (1 = worst, 5 = very good)</p>
+            <p style="font-weight: bold;">DE | Bewerten Sie Ihren Urlaub bei uns. (1 = am schlechtesten, 5 = sehr gut)
+            </p>
+            <div style="margin-top: 20px;">
+                <p>Tisztaság / Cleanness / Sauberkeit</p>
+                <input type="radio" name="clean" value="1" id="clean1">
+                <label for="clean1">1</label>
+                <input type="radio" name="clean" value="2" id="clean2">
+                <label for="clean2">2</label>
+                <input type="radio" name="clean" value="3" id="clean3">
+                <label for="clean3">3</label>
+                <input type="radio" name="clean" value="4" id="clean4">
+                <label for="clean4">4</label>
+                <input type="radio" name="clean" value="5" id="clean5">
+                <label for="clean5">5</label>
+            </div>
+            <div style="margin-top: 20px;">
+                <p>Kényelem / Comfort / Komfort</p>
+                <input type="radio" name="comfort" value="1" id="comfort1">
+                <label for="comfort1">1</label>
+                <input type="radio" name="comfort" value="2" id="comfort2">
+                <label for="comfort2">2</label>
+                <input type="radio" name="comfort" value="3" id="comfort3">
+                <label for="comfort3">3</label>
+                <input type="radio" name="comfort" value="4" id="comfort4">
+                <label for="comfort4">4</label>
+                <input type="radio" name="comfort" value="5" id="comfort5">
+                <label for="comfort5">5</label>
+            </div>
+            <div style="margin-top: 20px;">
+                <p>Szolgáltatások / Services / Dienstleistungen</p>
+                <input type="radio" name="service_quality" value="1" id="service_quality1">
+                <label for="service_quality1">1</label>
+                <input type="radio" name="service_quality" value="2" id="service_quality2">
+                <label for="service_quality2">2</label>
+                <input type="radio" name="service_quality" value="3" id="service_quality3">
+                <label for="service_quality3">3</label>
+                <input type="radio" name="service_quality" value="4" id="service_quality4">
+                <label for="service_quality4">4</label>
+                <input type="radio" name="service_quality" value="5" id="service_quality5">
+                <label for="service_quality5">5</label>
+            </div>
+            <div style="margin-top: 20px;">
+                <p>Személyzet / Staff / Personal</p>
+                <input type="radio" name="staff" value="1" id="staff1">
+                <label for="staff1">1</label>
+                <input type="radio" name="staff" value="2" id="staff2">
+                <label for="staff2">2</label>
+                <input type="radio" name="staff" value="3" id="staff3">
+                <label for="staff3">3</label>
+                <input type="radio" name="staff" value="4" id="staff4">
+                <label for="staff4">4</label>
+                <input type="radio" name="staff" value="5" id="staff5">
+                <label for="staff5">5</label>
+            </div>
+            <div style="margin-top: 20px">
+                <p>Ár-érték arány / Value for money / Preis-Leistungs-Verhältnis</p>
+                <input type="radio" name="value" value="1" id="value1">
+                <label for="value1">1</label>
+                <input type="radio" name="value" value="2" id="value2">
+                <label for="value2">2</label>
+                <input type="radio" name="value" value="3" id="value3">
+                <label for="value3">3</label>
+                <input type="radio" name="value" value="4" id="value4">
+                <label for="value4">4</label>
+                <input type="radio" name="value" value="5" id="value5">
+                <label for="value5">5</label>
+            </div>
+            <br>
+            <div class="mb-3">
+                <label for="response" class="form-label">HU | Ha 5-nél kevesebb pontot adott, kérjük, írja le, pontosan
+                    mivel volt kevésbé elégedett! <br>
+                    EN | If you gave less than 5 points, please describe exactly what you were less satisfied with. <br>
+                    DE | Wenn Sie weniger als 5 Punkte vergeben haben, beschreiben Sie bitte genau, womit Sie weniger
+                    zufrieden waren.
+                </label>
+                <br>
+                <textarea class="form-control form-control-md" id="response" name="response"></textarea>
+            </div>
+
+
+            <input type="submit" class="btn btn-outline-dark" value="Elküld / Send">
+        </form>
+    </div>
+
+</body>
+
+</html>
